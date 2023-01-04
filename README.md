@@ -77,7 +77,7 @@ python train.py --train_file='data/train_contents.tsv' \
     - Rouge-1 : 예측 요약본과 실제 요약본 간 중복되는 unigram의 수
     - Rouge-2 : 예측 요약본과 실제 요약본 간 중복되는 bigram의 수
     - Rouge-N : 예측 요약본과 실제 요약본 간 중복되는 n-gram의 수
-
+    
 
     | ||Score|
     |-------|:--------|:--------|
@@ -94,6 +94,7 @@ python train.py --train_file='data/train_contents.tsv' \
    - 변환 코드를 실행하면 <b>./kobart_summary</b> 에 model binary 가 추출 됨
   
 ```
+# python get_model_binary.py --hparams hparam_path --model_binary model_binary_path
  python get_model_binary.py --hparams='logs/tb_logs/default/version_0/hparams.yaml' --model_binary='logs/model_chp/epoch=01-val_loss=2.030.ckpt'
 ```
 
