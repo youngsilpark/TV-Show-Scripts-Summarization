@@ -1,0 +1,96 @@
+INFO:root:Namespace(accelerator=None, accumulate_grad_batches=None, amp_backend='native', amp_level=None, auto_lr_find=False, auto_scale_batch_size=False, auto_select_gpus=False, batch_size=4, benchmark=False, check_val_every_n_epoch=1, checkpoint_callback=None, checkpoint_path=None, default_root_dir='logs', detect_anomaly=False, deterministic=False, devices=None, enable_checkpointing=True, enable_model_summary=True, enable_progress_bar=True, fast_dev_run=False, flush_logs_every_n_steps=None, gpus=2, gradient_clip_algorithm=None, gradient_clip_val=1.0, ipus=None, limit_predict_batches=1.0, limit_test_batches=1.0, limit_train_batches=1.0, limit_val_batches=1.0, log_every_n_steps=50, log_gpu_memory=None, logger=True, lr=3e-05, max_epochs=50, max_len=512, max_steps=-1, max_time=None, min_epochs=None, min_steps=None, model_path=None, move_metrics_to_cpu=False, multiple_trainloader_mode='max_size_cycle', num_nodes=1, num_processes=1, num_sanity_val_steps=2, num_workers=3, overfit_batches=0.0, plugins=None, precision=32, prepare_data_per_node=None, process_position=0, profiler=None, progress_bar_refresh_rate=None, reload_dataloaders_every_epoch=False, reload_dataloaders_every_n_epochs=0, replace_sampler_ddp=True, resume_from_checkpoint=None, stochastic_weight_avg=False, strategy=None, sync_batchnorm=False, terminate_on_nan=None, test_file='data/test_contents.tsv', tpu_cores=None, track_grad_norm=-1, train_file='data/train_contents.tsv', val_check_interval=1.0, warmup_ratio=0.1, weights_save_path=None, weights_summary='top')
+/home/sil/.conda/envs/py38/lib/python3.8/site-packages/pytorch_lightning/trainer/connectors/accelerator_connector.py:849: UserWarning: You requested multiple GPUs but did not specify a backend, e.g. `Trainer(strategy="dp"|"ddp"|"ddp2")`. Setting `strategy="ddp_spawn"` for you.
+  rank_zero_warn(
+GPU available: True, used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+INFO:torch.distributed.nn.jit.instantiator:Created a temporary directory at /tmp/tmp4u5tvh6k
+INFO:torch.distributed.nn.jit.instantiator:Writing /tmp/tmp4u5tvh6k/_remote_module_non_scriptable.py
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1,2,3]
+/home/sil/.conda/envs/py38/lib/python3.8/site-packages/transformers/optimization.py:306: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use thePyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+INFO:root:number of workers 3, data length 8447
+INFO:root:num_train_steps : 35195
+INFO:root:num_warmup_steps : 3519
+Traceback (most recent call last):
+  File "train.py", line 186, in <module>
+    trainer.fit(model, dm)
+  File "/home/sil/.conda/envs/py38/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 740, in fit
+    self._call_and_handle_interrupt(
+  File "/home/sil/.conda/envs/py38/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 685, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/sil/.conda/envs/py38/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 777, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/sil/.conda/envs/py38/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1199, in _run
+    self._dispatch()
+  File "/home/sil/.conda/envs/py38/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1279, in _dispatch
+    self.training_type_plugin.start_training(self)
+  File "/home/sil/.conda/envs/py38/lib/python3.8/site-packages/pytorch_lightning/plugins/training_type/ddp_spawn.py", line 173, in start_training
+    self.spawn(self.new_process, trainer, self.mp_queue, return_result=False)
+  File "/home/sil/.conda/envs/py38/lib/python3.8/site-packages/pytorch_lightning/plugins/training_type/ddp_spawn.py", line 201, in spawn
+    mp.spawn(self._wrapped_function, args=(function, args, kwargs, return_queue), nprocs=self.num_processes)
+  File "/home/sil/.conda/envs/py38/lib/python3.8/site-packages/torch/multiprocessing/spawn.py", line 240, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method='spawn')
+  File "/home/sil/.conda/envs/py38/lib/python3.8/site-packages/torch/multiprocessing/spawn.py", line 189, in start_processes
+    process.start()
+  File "/home/sil/.conda/envs/py38/lib/python3.8/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/home/sil/.conda/envs/py38/lib/python3.8/multiprocessing/context.py", line 284, in _Popen
+    return Popen(process_obj)
+  File "/home/sil/.conda/envs/py38/lib/python3.8/multiprocessing/popen_spawn_posix.py", line 32, in __init__
+    super().__init__(process_obj)
+  File "/home/sil/.conda/envs/py38/lib/python3.8/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/home/sil/.conda/envs/py38/lib/python3.8/multiprocessing/popen_spawn_posix.py", line 47, in _launch
+    reduction.dump(process_obj, fp)
+  File "/home/sil/.conda/envs/py38/lib/python3.8/multiprocessing/reduction.py", line 60, in dump
+    ForkingPickler(file, protocol).dump(obj)
+AttributeError: Can't pickle local object 'get_cosine_schedule_with_warmup.<locals>.lr_lambda'
+INFO:root:Namespace(accelerator=None, accumulate_grad_batches=None, amp_backend='native', amp_level=None, auto_lr_find=False, auto_scale_batch_size=False, auto_select_gpus=False, batch_size=4, benchmark=False, check_val_every_n_epoch=1, checkpoint_callback=None, checkpoint_path=None, default_root_dir='logs', detect_anomaly=False, deterministic=False, devices=None, enable_checkpointing=True, enable_model_summary=True, enable_progress_bar=True, fast_dev_run=False, flush_logs_every_n_steps=None, gpus=2, gradient_clip_algorithm=None, gradient_clip_val=1.0, ipus=None, limit_predict_batches=1.0, limit_test_batches=1.0, limit_train_batches=1.0, limit_val_batches=1.0, log_every_n_steps=50, log_gpu_memory=None, logger=True, lr=3e-05, max_epochs=50, max_len=512, max_steps=-1, max_time=None, min_epochs=None, min_steps=None, model_path=None, move_metrics_to_cpu=False, multiple_trainloader_mode='max_size_cycle', num_nodes=1, num_processes=1, num_sanity_val_steps=2, num_workers=3, overfit_batches=0.0, plugins=None, precision=32, prepare_data_per_node=None, process_position=0, profiler=None, progress_bar_refresh_rate=None, reload_dataloaders_every_epoch=False, reload_dataloaders_every_n_epochs=0, replace_sampler_ddp=True, resume_from_checkpoint=None, stochastic_weight_avg=False, strategy=None, sync_batchnorm=False, terminate_on_nan=None, test_file='data/test_contents.tsv', tpu_cores=None, track_grad_norm=-1, train_file='data/train_contents.tsv', val_check_interval=1.0, warmup_ratio=0.1, weights_save_path=None, weights_summary='top')
+/home/sil/.conda/envs/py38/lib/python3.8/site-packages/pytorch_lightning/trainer/connectors/accelerator_connector.py:849: UserWarning: You requested multiple GPUs but did not specify a backend, e.g. `Trainer(strategy="dp"|"ddp"|"ddp2")`. Setting `strategy="ddp_spawn"` for you.
+  rank_zero_warn(
+GPU available: True, used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+INFO:torch.distributed.nn.jit.instantiator:Created a temporary directory at /tmp/tmp_8e_5o9b
+INFO:torch.distributed.nn.jit.instantiator:Writing /tmp/tmp_8e_5o9b/_remote_module_non_scriptable.py
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1,2,3]
+/home/sil/.conda/envs/py38/lib/python3.8/site-packages/transformers/optimization.py:306: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use thePyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+INFO:root:number of workers 3, data length 8447
+INFO:root:num_train_steps : 35195
+INFO:root:num_warmup_steps : 3519
+Traceback (most recent call last):
+  File "train.py", line 186, in <module>
+    trainer.fit(model, dm)
+  File "/home/sil/.conda/envs/py38/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 740, in fit
+    self._call_and_handle_interrupt(
+  File "/home/sil/.conda/envs/py38/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 685, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/sil/.conda/envs/py38/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 777, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/sil/.conda/envs/py38/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1199, in _run
+    self._dispatch()
+  File "/home/sil/.conda/envs/py38/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1279, in _dispatch
+    self.training_type_plugin.start_training(self)
+  File "/home/sil/.conda/envs/py38/lib/python3.8/site-packages/pytorch_lightning/plugins/training_type/ddp_spawn.py", line 173, in start_training
+    self.spawn(self.new_process, trainer, self.mp_queue, return_result=False)
+  File "/home/sil/.conda/envs/py38/lib/python3.8/site-packages/pytorch_lightning/plugins/training_type/ddp_spawn.py", line 201, in spawn
+    mp.spawn(self._wrapped_function, args=(function, args, kwargs, return_queue), nprocs=self.num_processes)
+  File "/home/sil/.conda/envs/py38/lib/python3.8/site-packages/torch/multiprocessing/spawn.py", line 240, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method='spawn')
+  File "/home/sil/.conda/envs/py38/lib/python3.8/site-packages/torch/multiprocessing/spawn.py", line 189, in start_processes
+    process.start()
+  File "/home/sil/.conda/envs/py38/lib/python3.8/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/home/sil/.conda/envs/py38/lib/python3.8/multiprocessing/context.py", line 284, in _Popen
+    return Popen(process_obj)
+  File "/home/sil/.conda/envs/py38/lib/python3.8/multiprocessing/popen_spawn_posix.py", line 32, in __init__
+    super().__init__(process_obj)
+  File "/home/sil/.conda/envs/py38/lib/python3.8/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/home/sil/.conda/envs/py38/lib/python3.8/multiprocessing/popen_spawn_posix.py", line 47, in _launch
+    reduction.dump(process_obj, fp)
+  File "/home/sil/.conda/envs/py38/lib/python3.8/multiprocessing/reduction.py", line 60, in dump
+    ForkingPickler(file, protocol).dump(obj)
+AttributeError: Can't pickle local object 'get_cosine_schedule_with_warmup.<locals>.lr_lambda'
