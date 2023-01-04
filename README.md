@@ -1,6 +1,6 @@
 # 방송 콘텐츠 대본 요약 모델
 
-## Data (전처리)
+## Data 
 - [AI Hub 방송 콘텐츠 대본 요약 데이터](https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=591)
 - 데이터 탐색에 용이하게 tsv 형태로 데이터를 변환함
 - 문서 유형
@@ -11,11 +11,7 @@
     - Test Data : 9,988
  
 
-## How to Train (학습)
-- KoBART summarization fine-tuning
-    - huggingface.co에 있는 binary를 활용
-    - https://huggingface.co/gogamza/kobart-base-v1
-    
+## How to Train 
 ```bash
 pip install -r requirements.txt
 
@@ -32,7 +28,7 @@ python train.py --train_file='data/train_contents.tsv' \
 ```
 
 
-## Generation Sample (예측)
+## Generation Sample 
 1. 예능
 
 | ||Text|
@@ -76,7 +72,7 @@ python train.py --train_file='data/train_contents.tsv' \
 |6|koBART|심재철 원내대표와 김한표 원내수석은 회동이 열리면 의사일정을 협의해 판단하겠다는 입장이었다. 황교안 대표가 전 국민에게 1인당 50만원을 즉각 지급하라고 했고 김종인 총괄선대위원장이 50만원을 긴급명령으로 빨리 지급하라는 이야기는 100 조 원의 예산 범위 내에서 가능하다고 이야기했다.  선거가 끝났다고 야당의 입장이 바뀌지는 않을 것이다.|
 
 
-## Model Performance (평가)
+## Model Performance 
 - Sample Data를 기준으로 카테고리 별 하나의 스크립트를 랜덤으로 선정하여 rouge score를 산출함
     - Rouge-1 : 예측 요약본과 실제 요약본 간 중복되는 unigram의 수
     - Rouge-2 : 예측 요약본과 실제 요약본 간 중복되는 bigram의 수
@@ -108,9 +104,10 @@ streamlit run infer.py
 ```
 
 - Demo Page 실행 결과
-  - [원문링크](https://www.mk.co.kr/news/society/view/2020/12/1289300/?utm_source=naver&utm_medium=newsstand)
+  - [원문] 
+  화자1]개그맨 김경진이 방송을 통해 공개구혼에 나섰습니다.\n화자2]김경진은 9일 방송되는 KBS2 건강 프로그램 <비타민> '2013 새해건강계획 남성편' 위험인물 5인방 왕중왕전의 게스트로 출연해 KBS N 최희 아나운서에게 고백하며 공개적으로 구혼을 펼쳤습니다.\n화자1]그는 예전 비타민 ‘두뇌건강’ 편에 출연해 모두를 놀라게 한 위험인물로 선정되었으며 새해를 맞아 다시 한 번 건강 상태를 점검받기 위해 출연했습니다.
   
-<img src="imgs/demo.png" alt="drawing" style="width:600px;"/>
+<![image](https://user-images.githubusercontent.com/107041027/210504508-7d2b3d01-75d8-4534-88c6-1205ac26f230.png)>
 
 
 ## Reference
