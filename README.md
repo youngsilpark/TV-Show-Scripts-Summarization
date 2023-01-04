@@ -1,20 +1,24 @@
-# KoBART-summarization
+# 방송 콘텐츠 대본 요약 모델
 
-## Load KoBART
-- huggingface.co에 있는 binary를 활용
-  - https://huggingface.co/gogamza/kobart-base-v1
-
-
-## Data
+## Data (데이터 전처리)
 - [AI Hub 방송 콘텐츠 대본 요약 데이터](https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=591)
 - 데이터 탐색에 용이하게 tsv 형태로 데이터를 변환함
 - Data 구조
+    - 문서 유형은 요약 길이에 따라 두가지로 존재한다.
+      1. 2~3문장 요약문
+      2. 20% 요약문 
+    - 전체 데이터에서 각각 50% 비중을 차지
+    - 학습에는 두 데이터를 따로 구분하지 않고 모두 사용
+
     - Train Data : 33,787
     - Test Data : 9,988
  
 
-## How to Train
+## How to Train (학습)
 - KoBART summarization fine-tuning
+    - huggingface.co에 있는 binary를 활용
+    - https://huggingface.co/gogamza/kobart-base-v1
+    
 ```bash
 pip install -r requirements.txt
 
@@ -28,11 +32,10 @@ python train.py --train_file='data/train_contents.tsv' \
                 --accelerator=ddp \
                 --batch_size=16 \
                 --num_workers=3
-
 ```
 
 
-## Generation Sample
+## Generation Sample (예측)
 1. 예능
 
 | ||Text|
@@ -76,7 +79,7 @@ python train.py --train_file='data/train_contents.tsv' \
 |3|koBART|심재철 원내대표와 김한표 원내수석은 회동이 열리면 의사일정을 협의해 판단하겠다는 입장이었다. 황교안 대표가 전 국민에게 1인당 50만원을 즉각 지급하라고 했고 김종인 총괄선대위원장이 50만원을 긴급명령으로 빨리 지급하라는 이야기는 100 조 원의 예산 범위 내에서 가능하다고 이야기했다.  선거가 끝났다고 야당의 입장이 바뀌지는 않을 것이다.|
 
 
-## Model Performance
+## Model Performance (평가)
 - Sample Data를 기준으로 카테고리 별 하나의 스크립트를 랜덤으로 선정하여 rouge score를 산출함
 
   Rouge-1: 0.708 (예측 요약본과 실제 요약본 간 중복되는 unigram의 수)
