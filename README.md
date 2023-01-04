@@ -109,8 +109,6 @@ streamlit run infer.py
     
  ![image](https://user-images.githubusercontent.com/107041027/210505408-9c2ddced-cdbb-4354-b454-4254ba89557b.png)
 
- ![image](https://user-images.githubusercontent.com/107041027/210505265-d9bdec15-80ac-4570-b874-f89e106dd1bf.png)
-
 
 
 ## Reference
