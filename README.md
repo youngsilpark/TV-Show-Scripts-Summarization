@@ -12,7 +12,7 @@
     - Test Data : 9,988
     
 
-##습학습 
+## 학습 
 ```bash
 pip install -r requirements.txt
 
