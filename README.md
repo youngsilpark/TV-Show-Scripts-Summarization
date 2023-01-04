@@ -3,13 +3,13 @@
 ## Data (전처리)
 - [AI Hub 방송 콘텐츠 대본 요약 데이터](https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=591)
 - 데이터 탐색에 용이하게 tsv 형태로 데이터를 변환함
-- Data 구조
-    - 문서 유형은 요약 길이에 따라 두가지로 존재한다.
-      1. 2~3문장 요약문
-      2. 20% 요약문 
-    - 전체 데이터에서 각각 50% 비중을 차지
-    - 학습에는 두 데이터를 따로 구분하지 않고 모두 사용
+- 문서 유형
+      1. 2~3문장 요약문 
+      2. 20% 요약문
+- 학습 시, 두 데이터를 따로 구분하지 않고 사용
+- 각각 50% 비중을 차지
 
+- Data 구조
     - Train Data : 33,787
     - Test Data : 9,988
  
