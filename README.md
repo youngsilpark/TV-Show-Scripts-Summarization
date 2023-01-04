@@ -79,9 +79,15 @@ python train.py --train_file='data/train_contents.tsv' \
 ## Model Performance (평가)
 - Sample Data를 기준으로 카테고리 별 하나의 스크립트를 랜덤으로 선정하여 rouge score를 산출함
 
-  Rouge-1: 0.708 (예측 요약본과 실제 요약본 간 중복되는 unigram의 수)
-  Rouge-2: 0.652 (예측 요약본과 실제 요약본 간 중복되는 bigram의 수)
-  Rouge-N: 0.678 (예측 요약본과 실제 요약본 간 중복되는 n-gram의 수)
+| ||Score|
+|-------|:--------|:--------|
+|3|Rouge-1|0.708|
+|3|Rouge-2|0.652|
+|3|Rouge-N|0.678|
+
+  :  (예측 요약본과 실제 요약본 간 중복되는 unigram의 수)
+  Rouge-2: 0. (예측 요약본과 실제 요약본 간 중복되는 bigram의 수)
+  Rouge-N: 0. (예측 요약본과 실제 요약본 간 중복되는 n-gram의 수)
 
 
 ## Demo
