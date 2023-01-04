@@ -2,6 +2,7 @@
 
 ## Data 
 - [AI Hub 방송 콘텐츠 대본 요약 데이터](https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=591)
+- 2021년에 구축된 6가지 방송 콘텐츠 분야 데이터
 - 데이터 탐색에 용이하게 tsv 형태로 데이터를 변환함
 - 문서 유형
     - 2~3문장 요약문 (50%)
@@ -9,6 +10,9 @@
 - Data 구조
     - Train Data : 33,787
     - Test Data : 9,988
+    
+![image](https://user-images.githubusercontent.com/107041027/210508601-2bfb858a-2d74-4202-ac18-71ec5da1387b.png)
+
  
 
 ## How to Train 
