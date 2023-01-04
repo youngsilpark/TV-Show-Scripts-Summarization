@@ -78,11 +78,11 @@ python train.py --train_file='data/train_contents.tsv' \
     - Rouge-2 : 예측 요약본과 실제 요약본 간 중복되는 bigram의 수
     - Rouge-N : 예측 요약본과 실제 요약본 간 중복되는 n-gram의 수
     
-| ||Score|
-|-------|:--------|:--------|
-|1|Rouge-1|0.708|
-|2|Rouge-2|0.652|
-|3|Rouge-N|0.678|
+    | ||Score|
+    |-------|:--------|:--------|
+    |1|Rouge-1|0.708|
+    |2|Rouge-2|0.652|
+    |3|Rouge-N|0.678|
 
 
 ## Demo
