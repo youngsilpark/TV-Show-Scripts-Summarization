@@ -11,9 +11,6 @@
     - Train Data : 33,787
     - Test Data : 9,988
     
-![image](https://user-images.githubusercontent.com/107041027/210508601-2bfb858a-2d74-4202-ac18-71ec5da1387b.png)
-
- 
 
 ## How to Train 
 ```bash
