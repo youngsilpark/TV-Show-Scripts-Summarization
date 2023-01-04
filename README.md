@@ -95,7 +95,7 @@ python train.py --train_file='data/train_contents.tsv' \
   
 ```
 # python get_model_binary.py --hparams hparam_path --model_binary model_binary_path
- python get_model_binary.py --hparams='logs/tb_logs/default/version_0/hparams.yaml' --model_binary='logs/model_chp/epoch=01-val_loss=2.030.ckpt'
+python get_model_binary.py --hparams='logs/tb_logs/default/version_0/hparams.yaml' --model_binary='logs/model_chp/epoch=01-val_loss=2.030.ckpt'
 ```
 
 - streamlit을 활용하여 Demo 실행
