@@ -4,8 +4,8 @@
 - [AI Hub 방송 콘텐츠 대본 요약 데이터](https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=591)
 - 데이터 탐색에 용이하게 tsv 형태로 데이터를 변환함
 - 문서 유형
-      - 2~3문장 요약문 (50%)
-      - 20% 요약문 (50%)
+    - 2~3문장 요약문 (50%)
+    - 20% 요약문 (50%)
 - Data 구조
     - Train Data : 33,787
     - Test Data : 9,988
