@@ -108,6 +108,8 @@ streamlit run infer.py
     화자1]개그맨 김경진이 방송을 통해 공개 구혼에 나섰습니다. 화자2]김경진은 9일 방송되는 KBS2 건강 프로그램 <비타민> '2013 새해 건강 계획 남성 편' 위험 인물 5인방왕중왕전의 게스트로 출연해 KBS N 최희 아나운서에게 고백하며 공개적으로 구혼을 펼쳤습니다. 화자 1]그는 예전 비타민 ‘두뇌 건강’ 편에 출연해 모두를 놀라게 한 위험 인물로 선정되었으며 새해를 맞아 다시 한 번 건강 상태를 점검 받기 위해 출연했습니다.
     
  ![image](https://user-images.githubusercontent.com/107041027/210504911-ab28a3ae-7e57-4543-9ec5-b5c23c5e4a65.png)
+ ![image](https://user-images.githubusercontent.com/107041027/210505265-d9bdec15-80ac-4570-b874-f89e106dd1bf.png)
+
 
 
 ## Reference
